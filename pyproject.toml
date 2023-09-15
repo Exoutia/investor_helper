@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "invester-helper"
+version = "0.1.0"
+description = "This is a project focused toward to the people who want to invest properly in stock market. This is for the people who don't have much knowledge but want to make sound decision toward the market."
+authors = ["Exoutia <jhav365@gmail.com>"]
+readme = "README.md"
+packages = [{include = "invester_helper"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
