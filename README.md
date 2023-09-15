@@ -7,6 +7,7 @@ Note: This is a simple project and only provide data which people can use to mak
 
 ## Feature List
 - [ ] To tell how much money one should invest according to the income they have.
+- [ ] A mutual fund earning calculator.
 - [ ] To tell how should they divide the money equity, debit, etc.
 - [ ] How the market is facing today.
 - [ ] a strategy picker and advicer according to some question answerd to the program.
