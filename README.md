@@ -12,3 +12,4 @@ Note: This is a simple project and only provide data which people can use to mak
 - [ ] To tell how should they divide the money equity, debit, etc.
 - [ ] How the market is facing today.
 - [ ] a strategy picker and advicer according to some question answerd to the program.
+- [x] Searching for mutual funds in india.
