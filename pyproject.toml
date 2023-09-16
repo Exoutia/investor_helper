@@ -9,6 +9,7 @@ packages = [{include = "invester_helper"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 requests = "^2.31.0"
+flask-sqlalchemy = "^3.1.1"
 
 
 [build-system]
