@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "invester-helper"
+name = "investor-helper"
 version = "0.1.0"
 description = "This is a project focused toward to the people who want to invest properly in stock market. This is for the people who don't have much knowledge but want to make sound decision toward the market."
 authors = ["Exoutia <jhav365@gmail.com>"]
@@ -8,6 +8,7 @@ packages = [{include = "invester_helper"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+requests = "^2.31.0"
 
 
 [build-system]
