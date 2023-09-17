@@ -1,5 +1,6 @@
 {% for result in results %}
-<tr>
+
+<tr hx-get="/mutualfunds/{{result.scheme_code}}" hx-target="#whole-table-section">
     <td>{{ result.id }}</td>
     <td>{{ result.scheme_code }}</td>
     <td>{{ result.scheme_name }}</td>

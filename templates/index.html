@@ -9,7 +9,11 @@
   <script src="https://unpkg.com/htmx.org@1.9.4"></script>
 </head>
 <body>
-  <section class="section">
+  <header>
+    <h1 class="">Investor Helper</h1>
+    {% comment %} TODO: fix the way the rendering is occuring right now. after htmx render the details page {% endcomment %}
+  </header>
+  <section class="section" id="whole-table-section">
     <div class="columns">
       <div class="column is-one-third is-offset-one-third">
         <input type="text" class="input" placeholder="Search" name="query" hx-get="/search" hx-trigger="keyup changed delay:500ms" hx-target="#results">
