@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mutual Funds Search</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <script src="https://unpkg.com/htmx.org@1.9.4"></script>
-</head>
-<body>
-  <header>
-    <h1 class="">Investor Helper</h1>
-    {% comment %} TODO: fix the way the rendering is occuring right now. after htmx render the details page {% endcomment %}
-  </header>
-  <section class="section" id="whole-table-section">
-    <div class="columns">
-      <div class="column is-one-third is-offset-one-third">
-        <input type="text" class="input" placeholder="Search" name="query" hx-get="/search" hx-trigger="keyup changed delay:500ms" hx-target="#results">
-      </div>
-    </div>
-    <table class="table is-fullwidth">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Scheme Code</th>
-          <th>Scheme Name</th>
-        </tr>
-      </thead>
-      <tbody id="results">
+    {% assets 'css'%}
+    <link rel="stylesheet" href="{{ASSET_URL}}" />
+    {% endassets %}
 
-      </tbody>
-    </table>
-  </section>
-</body>
-
+    <title>Mutual Funds {% if title %} | {{title}} {% endif %}</title>
+    <script
+      src="https://unpkg.com/htmx.org@1.9.5"
+      integrity="sha384-xcuj3WpfgjlKF+FXhSQFQ0ZNr39ln+hwjN3npfM9VBnUskLolQAcN80McRIVOPuO"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>{% include "navbar.html" %}</header>
+    <main id="main">
+        <div class="bg-white p-8">
+            <h1 class="text-2xl font-bold mb-4">Welcome to our Investor helper Application</h1>
+            <p class="text-lg mb-4">Are you interested in investing your money wisely to achieve your financial goals? Mutual funds can be an excellent choice, and our application is here to guide you through the exciting world of mutual funds in India.</p>
+            <h2 class="text-xl font-semibold mt-4 mb-2">What are Mutual Funds?</h2>
+            <p class="text-lg mb-4">Mutual funds are investment vehicles that pool money from multiple investors to invest in a diversified portfolio of stocks, bonds, or other securities. They offer a simple and accessible way for individuals to participate in the financial markets, even with limited knowledge and resources.</p>
+            <h2 class="text-xl font-semibold mt-4 mb-2">Why Mutual Funds in India?</h2>
+            <p class="text-lg mb-4">India's mutual fund industry has witnessed remarkable growth over the years, offering a wide range of investment opportunities for both beginners and experienced investors. With a plethora of options, ranging from equity and debt funds to hybrid and tax-saving schemes, there's a mutual fund suited for every financial goal.</p>
+            <h2 class="text-xl font-semibold mt-4 mb-2">What Can You Expect from Our Application?</h2>
+            <ul class="list-disc pl-6 text-lg">
+              <li>Search for different mutual funds and know more about them.</li>
+            </ul>
+            <p class="text-lg mt-4">Whether you're planning for your child's education, retirement, or simply looking to grow your wealth, mutual funds in India can be a powerful tool to help you achieve your financial aspirations. Start your journey with our application and unlock the potential of mutual fund investments in India.</p>
+            <p class="text-lg mt-4">Let's embark on this financial journey together!</p>
+        </div>
+    </main>
+  </body>
 </html>
+

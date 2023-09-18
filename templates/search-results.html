@@ -1,0 +1,31 @@
+{% if results != "" %}
+<table class="table-auto w-full text-left text-black dark:text-gray-400">
+  <thead class="text-sm text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    <tr
+    class="border-b-2 border-black bg-slate-100 text-slate-900"
+    >
+      <th class="px-8 py-2">ID</th>
+      <th class="px-8 py-2">Scheme Code</th>
+      <th class="px-8 py-2">Scheme Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for result in results %}
+    <tr
+      class="hover:bg-slate-200 cursor-pointer transition duration-150 ease-in-out text-slate-700"
+      hx-get="/mutualfunds/{{result.scheme_code}}"
+      hx-target="#main"
+      hx-push-url="/mutualfunds/{{result.scheme_code}}"
+    >
+      <td class="px-6 py-4" >{{ result.id }}</td>
+      <td class="px-6 py-4" >{{ result.scheme_code }}</td>
+      <td class="px-6 py-4" >{{ result.scheme_name }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<div class="w-full flex justify-center">
+  <p class="text-black font-medium text-center">No Mutualfund Found</p>
+</div>
+{% endif %}

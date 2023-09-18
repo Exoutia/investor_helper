@@ -1,3 +1,5 @@
+{% if result %}
+
 {% for data in result.keys() %}
     {% if data == 'error' %}
         <div class="alert alert-danger" role="alert">
@@ -9,4 +11,10 @@
         </div>
     {% endif %}
 {% endfor %}
-{% comment %} TODO: Make it pretty ok {% endcomment %}
+
+{% else %}
+
+<div class="alert alert-danger" role="alert">
+    {{ error }}
+
+{% endif %}
