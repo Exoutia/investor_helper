@@ -3,8 +3,6 @@ from flask_assets import Bundle, Environment
 from flask_sqlalchemy import SQLAlchemy
 import json
 import requests
-import time
-from mftool import Mftool
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///mutualFund.db"
@@ -32,16 +30,17 @@ class MutualFund(db.Model):
 @app.route("/")
 def index():
     spinner = "static/svg/svg-loaders/spinning-circles.svg"
-    return render_template("index.html" , spinner=spinner)
+    return render_template("index.html", spinner=spinner)
+
 
 @app.route("/search-bar")
 def search_bar():
     spinner = "static/svg/svg-loaders/spinning-circles.svg"
     return render_template("search-bar.html", spinner=spinner)
 
+
 @app.route("/search")
 def search():
-    time.sleep(5)
     query = request.args.get("query")
     if query:
         mutual_funds = (
@@ -56,7 +55,7 @@ def search():
             mutual_funds = ""
     else:
         mutual_funds = MutualFund.query.limit(100).all()
-        
+
     spinner = "static/svg/svg-loaders/spinning-circles.svg"
     return render_template("search-results.html", results=mutual_funds, spinner=spinner)
 
@@ -66,12 +65,14 @@ def funds_detials(scheme_code):
     response = requests.get(api_url + scheme_code + "/latest")
     if response.status_code == 200:
         mutual_fund_result = response.json()
-    else: 
+    else:
         mutual_fund_result = None
-        
+
     spinner = "static/svg/svg-loaders/spinning-circles.svg"
     # print("hi:", mutual_fund_result)
-    return render_template("mutualfundsDetails.html", result=mutual_fund_result, spinner=spinner)
+    return render_template(
+        "mutualfundsDetails.html", result=mutual_fund_result, spinner=spinner
+    )
 
 
 def load_data():
